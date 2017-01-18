@@ -56,9 +56,9 @@ end
     end
     redirect_to group_path(@group)
   end
-  
+
   def quit
-    @group Group.find(params[:id])
+    @group = Group.find(params[:id])
 
     if current_user.is_member_of?(@group)
       current_user.quit!(@group)
